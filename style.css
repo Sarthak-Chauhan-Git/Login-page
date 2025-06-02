@@ -101,10 +101,15 @@ button {
   margin: auto;
   cursor: pointer;
 }
-#submit {
+.submit {
   background-color: #ff004d;
   color: #fff;
   width: 70%;
+}
+.btn2{
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
 }
 .newAccount {
   z-index: 2;
@@ -125,7 +130,7 @@ p {
   color: #fff;
   margin-bottom: 5px;
 }
-#signup {
+.signup {
   background-color: #fff;
   color: #ff004d;
 }
@@ -170,4 +175,12 @@ p {
 }
 .part3 button {
   margin: 1rem;
+}
+.registerForm button{
+    cursor: pointer;
+}
+.signin{
+    position: relative;
+    left: -170%;
+    color: #ff004d;
 }
