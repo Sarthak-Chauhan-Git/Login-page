@@ -30,30 +30,33 @@
             name="password"
             placeholder="Enter password"
           />
-
           <button type="submit" class="submit">Submit</button>
         </form>
+        <button type="button" id="forgotPass">forgot password?</button>
       </div>
       <div class="newAccount">
-        <button class="signup">Don't have an account?</button>
+        <button type="button" class="signup">Don't have an account?</button>
       </div>
       <div class="part3 hidden">
         <h2>Create Account</h2>
         <hr />
         <form class="registerForm" action="/submit-data" method="post">
           <input
+          required;
             type="text"
             id="newUsername"
             name="username"
             placeholder="Enter username"
           />
           <input
+          required;
             type="password"
             id="newPassword"
             name="password"
             placeholder="Enter password"
           />
           <input
+          required;
             type="text"
             id="phone"
             name="Phone"
@@ -62,7 +65,7 @@
           <span id="OTPtimer"
             ><button class="hidden" id="resendOTP">Resend</button></span
           >
-          <input type="text" id="otp" placeholder="Enter OTP" />
+          <input required type="text" id="otp" name="otp" placeholder="Enter OTP" />
           <button type="submit" class="submit btn2">Submit</button>
         </form>
       </div>

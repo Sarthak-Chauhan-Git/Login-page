@@ -101,6 +101,16 @@ button {
   margin: auto;
   cursor: pointer;
 }
+#forgotPass{
+    position: absolute;
+    bottom: 11rem;
+    background-color: transparent;
+    color: blue;
+    margin: 0;
+    margin-right: 2rem;
+    padding: 0;
+    align-self: flex-end;
+}
 .submit {
   background-color: #ff004d;
   color: #fff;

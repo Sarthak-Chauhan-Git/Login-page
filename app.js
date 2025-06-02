@@ -24,7 +24,7 @@ container.addEventListener("mouseleave", () => {
 });
 
 // transition toggle
-signup.addEventListener("click", () => {
+signup.addEventListener("click", function optionToggle() {
   if (isSignin) {
     isSignin = false;
     loginPart.classList.add("hidden");
@@ -52,7 +52,7 @@ const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 form1.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (!username.value || !password.value) {
+  if (!username.value.trim() || !password.value) {
     alert("Please enter both username and password.");
   } else {
     console.log(`Username: ${username.value} Password: ${password.value}`);
@@ -73,17 +73,44 @@ form2.addEventListener("submit", (e) => {
   e.preventDefault();
   if (!newUser.value || !newPass.value) {
     alert("Please enter both username and password.");
-  }else{
-  const newUsername = newUser.value;
-  const newPassword = newPass.value;
-  const newPhone = phone.value;
-  console.log(`Registered as ${newUsername}, ${newPassword} , ${newPhone}`);
-  e.preventDefault();
-  if (otp.value !== sentOTP) {
-    alert("Incorrect OTP");
-    return;
+  } else {
+    const newUsername = newUser.value;
+    const newPassword = newPass.value;
+    const newPhone = phone.value;
+    const phonePattern = /^[6-9]\d{9}$/;
+    if (!phonePattern.test(newPhone)) {
+      alert("Enter a valid 10-digit Indian phone number.");
+      return;
+    }
+
+    console.log(`Registered as ${newUsername}, ${newPassword} , ${newPhone}`);
+    if (isValidOTP(otp.value, sentOTP)) {
+      alert("Account created successfully!");
+      newPass.value = "";
+      return;
+    }
   }
-  alert("Account created successfully!");
-  newPass.value = "";
-}
 });
+
+// otp verify
+function isValidOTP(recievedOTP, sentOTP) {
+  if (recievedOTP !== sentOTP) {
+    alert("Incorrect OTP");
+    return false;
+  }
+  return true;
+}
+
+// // Fogot password mechanism
+// const forgotPass = document.querySelector("#forgotPass");
+// forgotPass.addEventListener("click", () => {
+//    isSignin = false;
+//     loginPart.classList.add("hidden");
+//     registerImage.classList.remove("part1");
+//     registerImage.classList.add("part1after");
+//     signup.classList.remove("signup");
+//     signup.classList.add("signin");
+//     signup.innerHTML = "Already have an account?";
+//     registerArea.classList.remove("hidden");
+//     newPass.setAttribute("aria-label", "New Password");
+// });
