@@ -6,10 +6,12 @@ const password = document.querySelector("#password");
 const signup = document.querySelector("#signup");
 const loginPart = document.querySelector(".part2");
 const registerImage = document.querySelector(".part1");
+const registerArea = document.querySelector(".part3");
 
 newAccount.classList.remove("show");
 
 let hoverTimeout;
+let isSignin = true;
 
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -24,14 +26,21 @@ container.addEventListener("mouseenter", () => {
 });
 
 container.addEventListener("mouseleave", () => {
-  clearTimeout(hoverTimeout); 
-  newAccount.classList.remove("show");
+  if(isSignin){
+    clearTimeout(hoverTimeout); 
+    newAccount.classList.remove("show");
+  }
 });
 
-// signup.addEventListener("click",()=>{
-//   loginPart.classList.add("hidden");
-//   registerImage.classList.remove("part1");
-//   registerImage.classList.add("part1after");
-//   signup.hidden = true;
-// })
+signup.addEventListener("click",()=>{
+  isSignin = false;
+  loginPart.classList.add("hidden");
+  registerImage.classList.remove("part1");
+  registerImage.classList.add("part1after");
+  // signup.style.xtranslate = "-6rem";
+  signup.hidden = true;
+  setTimeout(() => {
+    registerArea.classList.remove("hidden");
+  }); 
+})
 

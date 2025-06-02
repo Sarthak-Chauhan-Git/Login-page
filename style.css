@@ -153,16 +153,22 @@ p{
     display: block;
     border-radius: 5vh 0vh 0vh 5vh;
 }
-
-/*
-<input
-            type="text"
-            id="phone"
-            name="Phone"
-            placeholder="Enter contact number"
-          />
-          <span id="OTPtimer"
-            ><button class="hidden" id="resendOTP">Resend</button></span
-          >
-          <input type="text" id="otp" placeholder="Enter OTP" />
-*/
+.part3{
+    position: relative;
+    left: 45%;
+    /* background-color: #FF004D; */   
+}
+.part3 h2{
+    margin-top: 1rem;
+    text-align: center;
+}
+.part3 hr{
+    width: 17rem;
+}
+.part3 input{
+    width: 100%;
+    margin: 0.5rem 1rem;
+}
+.part3 button{
+    margin: 1rem;
+}
