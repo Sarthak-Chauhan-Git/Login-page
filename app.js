@@ -13,26 +13,26 @@ newAccount.classList.remove("show");
 let hoverTimeout;
 let isSignin = true;
 
-form.addEventListener("submit", (e)=>{
-    e.preventDefault();
-    console.log(`Username: ${username.value} Password: ${password.value}`)
-    password.value = "";
-})
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(`Username: ${username.value} Password: ${password.value}`);
+  password.value = "";
+});
 
 container.addEventListener("mouseenter", () => {
   hoverTimeout = setTimeout(() => {
     newAccount.classList.add("show");
-  }, 1000); 
+  }, 1000);
 });
 
 container.addEventListener("mouseleave", () => {
-  if(isSignin){
-    clearTimeout(hoverTimeout); 
+  if (isSignin) {
+    clearTimeout(hoverTimeout);
     newAccount.classList.remove("show");
   }
 });
 
-signup.addEventListener("click",()=>{
+signup.addEventListener("click", () => {
   isSignin = false;
   loginPart.classList.add("hidden");
   registerImage.classList.remove("part1");
@@ -41,6 +41,5 @@ signup.addEventListener("click",()=>{
   signup.hidden = true;
   setTimeout(() => {
     registerArea.classList.remove("hidden");
-  }); 
-})
-
+  });
+});
