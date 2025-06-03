@@ -101,16 +101,19 @@ function isValidOTP(recievedOTP, sentOTP) {
   return true;
 }
 
-// // Fogot password mechanism
-// const forgotPass = document.querySelector("#forgotPass");
-// forgotPass.addEventListener("click", () => {
-//    isSignin = false;
-//     loginPart.classList.add("hidden");
-//     registerImage.classList.remove("part1");
-//     registerImage.classList.add("part1after");
-//     signup.classList.remove("signup");
-//     signup.classList.add("signin");
-//     signup.innerHTML = "Already have an account?";
-//     registerArea.classList.remove("hidden");
-//     newPass.setAttribute("aria-label", "New Password");
-// });
+// Fogot password mechanism
+const inp = document.querySelectorAll("input")
+const forgotPass = document.querySelector("#forgotPass");
+const phone2 = document.querySelector("#phone2");
+const otp2 = document.querySelector("#otp2");
+forgotPass.addEventListener("click", () => {
+   phone2.classList.remove("hidden")
+   otp2.classList.remove("hidden")
+   forgotPass.classList.add("hidden");
+   password.placeholder = "Enter new password";
+   for(i of inp){
+     i.style.margin = "0.5rem";
+   }
+});
+
+// otp mechanism left only

@@ -27,7 +27,7 @@ body {
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
 }
 h1 {
-  top: 6rem;
+  top: 3rem;
   position: absolute;
   left: 5%;
   width: 10%;
